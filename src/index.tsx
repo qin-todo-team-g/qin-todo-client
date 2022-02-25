@@ -2,14 +2,20 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import { ChakraProvider } from '@chakra-ui/react';
+import {ChakraProvider, Container, Flex} from '@chakra-ui/react';
 import { theme } from './theme';
 import {Lane} from "./components/Lane";
 
 ReactDOM.render(
   <React.StrictMode>
     <ChakraProvider theme={theme}>
-      <Lane />
+        <Container maxW={'container.lg'}>
+            <Flex>
+                <Lane color={"red"} title={"今日する"}/>
+                <Lane color={"orange"} title={"明日する"}/>
+                <Lane color={"yellow"} title={"今度する"}/>
+            </Flex>
+        </Container>
     </ChakraProvider>
   </React.StrictMode>,
   document.getElementById('root')
