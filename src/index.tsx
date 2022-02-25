@@ -6,14 +6,22 @@ import {ChakraProvider, Container, Flex} from '@chakra-ui/react';
 import { theme } from './theme';
 import {Lane} from "./components/Lane";
 
+const LANE_VALUES = [
+    { color: "red", title: "今日する" },
+    { color: "orange", title: "明日する" },
+    { color: "yellow", title: "今度する" },
+];
+
 ReactDOM.render(
   <React.StrictMode>
     <ChakraProvider theme={theme}>
         <Container maxW={'container.lg'}>
             <Flex>
-                <Lane color={"red"} title={"今日する"}/>
-                <Lane color={"orange"} title={"明日する"}/>
-                <Lane color={"yellow"} title={"今度する"}/>
+                {LANE_VALUES.map((val) => {
+                    return (
+                        <Lane color={val.color} title={val.title}/>
+                    );
+                })}
             </Flex>
         </Container>
     </ChakraProvider>
