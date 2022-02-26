@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import {ChakraProvider, Container, Flex} from '@chakra-ui/react';
+import {ChakraProvider, SimpleGrid} from '@chakra-ui/react';
 import { theme } from './theme';
 import { Header } from './components/Header'
 import {Lane} from "./components/Lane";
@@ -12,15 +12,13 @@ ReactDOM.render(
   <React.StrictMode>
     <ChakraProvider theme={theme}>
         <Header />
-        <Container maxW={'container.lg'}>
-            <Flex>
-                {LANE_VALUES.map((val) => {
-                    return (
-                        <Lane color={val.color} title={val.title}/>
-                    );
-                })}
-            </Flex>
-        </Container>
+        <SimpleGrid columns={{base: 1, sm: 3}} spacing={8} px='24px'>
+            {LANE_VALUES.map((val) => {
+                return (
+                    <Lane color={val.color} title={val.title}/>
+                );
+            })}
+        </SimpleGrid>
     </ChakraProvider>
   </React.StrictMode>,
   document.getElementById('root')
