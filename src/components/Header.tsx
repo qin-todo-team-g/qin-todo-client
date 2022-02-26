@@ -12,7 +12,7 @@ export const Header = () => {
         </Box>
         <Box height='80px' display={{base: 'none', sm: 'block'}} /> {/* スマホは非表示 */}
         <Box height='80px' display={{base: 'none', sm: 'block'}} /> {/* スマホは非表示 */}
-        <Box height='80px' display='flex' justifyContent={{base: 'center', sm: 'flex-end'}} alignItems='center'>
+        <Box height='80px' display='flex' justifyContent='flex-end' alignItems='center'>
           <Avatar src={profile} name='Test User' size='sm' />
         </Box>
         <Box height='80px' display={{base: 'none', sm: 'block'}} /> {/* スマホは非表示 */}
