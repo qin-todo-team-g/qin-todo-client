@@ -5,12 +5,7 @@ import reportWebVitals from './reportWebVitals';
 import {ChakraProvider, Container, Flex} from '@chakra-ui/react';
 import { theme } from './theme';
 import {Lane} from "./components/Lane";
-
-const LANE_VALUES = [
-    { color: "red", title: "今日する" },
-    { color: "orange", title: "明日する" },
-    { color: "yellow", title: "今度する" },
-];
+import {LANE_VALUES} from "./const/lane_values";
 
 ReactDOM.render(
   <React.StrictMode>
