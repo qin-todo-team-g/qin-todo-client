@@ -4,7 +4,7 @@ import './index.css';
 import reportWebVitals from './reportWebVitals';
 import { ChakraProvider } from '@chakra-ui/react'
 import { theme } from './theme'
-import {Header} from './components/Header'
+import { Header } from './components/Header'
 
 ReactDOM.render(
   <React.StrictMode>
