@@ -4,12 +4,14 @@ import './index.css';
 import reportWebVitals from './reportWebVitals';
 import {ChakraProvider, Container, Flex} from '@chakra-ui/react';
 import { theme } from './theme';
+import { Header } from './components/Header'
 import {Lane} from "./components/Lane";
 import {LANE_VALUES} from "./const/lane_values";
 
 ReactDOM.render(
   <React.StrictMode>
     <ChakraProvider theme={theme}>
+        <Header />
         <Container maxW={'container.lg'}>
             <Flex>
                 {LANE_VALUES.map((val) => {
