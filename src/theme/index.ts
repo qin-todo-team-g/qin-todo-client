@@ -14,7 +14,7 @@ export const theme = extendTheme({
   colors: {
     red: "#F43F5E", // 今日する
     orange: "#FB923C", // 明日する
-    yellow: "##FBBF24", // 今度する
+    yellow: "#FBBF24", // 今度する
     gray: "#C2C6D2", // テキストのグレーアウト。タスクの追加・編集・削除ボタン
   },
 });
