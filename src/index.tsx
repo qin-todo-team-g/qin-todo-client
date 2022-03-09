@@ -15,7 +15,7 @@ ReactDOM.render(
         <SimpleGrid columns={{base: 1, sm: 3}} spacing={8} px='24px'>
             {LANE_VALUES.map((val) => {
                 return (
-                    <Lane color={val.color} title={val.title}/>
+                    <Lane color={val.color} title={val.title} key={val.title}/>
                 );
             })}
         </SimpleGrid>
