@@ -2,28 +2,31 @@ module.exports = {
     "env": {
         "browser": true,
         "es2021": true,
-        "node": true
+        "node": true,
+        "jest": true
     },
-    "extends": [
-        "eslint:recommended",
-        "plugin:react/recommended",
-        "plugin:@typescript-eslint/recommended"
-    ],
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
         "ecmaFeatures": {
             "jsx": true
         },
-        "ecmaVersion": "latest",
         "sourceType": "module"
     },
     "plugins": [
         "react",
         "@typescript-eslint"
     ],
+    "settings": {
+        "react": {
+            "version": "detect"
+        }
+    },
+    "extends": [
+        "eslint:recommended",
+        "plugin:react/recommended",
+        "plugin:@typescript-eslint/recommended"
+    ],
     "rules": {
-        // 走査対象の拡張子を指定
-        "react/jsx-filename-extension": ["error", { extensions: [".js", ".jsx", ".ts", ".tsx"] }],
         // 文末にセミコロンがない場合警告
         "semi": "warn",
         // Reactのimport文必須化を無効
