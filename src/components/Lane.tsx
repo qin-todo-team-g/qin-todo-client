@@ -1,4 +1,4 @@
-import {Box, Flex, Spacer, Heading, Input, Icon} from '@chakra-ui/react'
+import {Box, Flex, Spacer, Heading, Input, Icon} from '@chakra-ui/react';
 import {AiFillPlusCircle} from 'react-icons/ai';
 import {VFC} from "react";
 
@@ -18,4 +18,4 @@ export const Lane: VFC<Props> = (props) => {
             </Flex>
         </Box>
     );
-}
+};
