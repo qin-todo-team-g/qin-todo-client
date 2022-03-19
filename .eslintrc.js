@@ -26,11 +26,10 @@ module.exports = {
         "plugin:react/recommended",
         "plugin:@typescript-eslint/recommended",
         "plugin:react-hooks/recommended",
-        "plugin:jsx-a11y/recommended"
+        "plugin:jsx-a11y/recommended",
+        "prettier"
     ],
     "rules": {
-        // 文末にセミコロンがない場合警告
-        "semi": "warn",
         // Reactのimport文必須化を無効
         "react/react-in-jsx-scope": "off",
         // PropTypesの記述必須化を無効
