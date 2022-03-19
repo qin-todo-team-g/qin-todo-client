@@ -23,7 +23,7 @@ module.exports = {
     ],
     "rules": {
         // 走査対象の拡張子を指定
-        "react/jsx-filename-extension": ["error", { extensions: [".js", ".jsx", "ts", ".tsx"] }],
+        "react/jsx-filename-extension": ["error", { extensions: [".js", ".jsx", ".ts", ".tsx"] }],
         // 文末にセミコロンがない場合警告
         "semi": "warn",
         // Reactのimport文必須化を無効
