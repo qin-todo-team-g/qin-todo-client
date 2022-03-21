@@ -4,7 +4,7 @@ import './index.css';
 import reportWebVitals from './reportWebVitals';
 import {ChakraProvider, SimpleGrid} from '@chakra-ui/react';
 import { theme } from './theme';
-import { Header } from './components/Header'
+import { Header } from './components/Header';
 import {Lane} from "./components/Lane";
 import {LANE_VALUES} from "./const/lane_values";
 

@@ -1,6 +1,6 @@
 import logo from '../images/logo.svg';
 import profile from '../images/profile.png';
-import { SimpleGrid, Box, Image, Avatar } from "@chakra-ui/react"
+import { SimpleGrid, Box, Image, Avatar } from "@chakra-ui/react";
 
 export const Header = () => {
   return (
@@ -18,5 +18,5 @@ export const Header = () => {
         <Box height='80px' display={{base: 'none', sm: 'block'}} /> {/* スマホは非表示 */}
       </SimpleGrid>
     </header>
-  )
-}
+  );
+};
