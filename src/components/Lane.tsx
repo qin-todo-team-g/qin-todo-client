@@ -1,7 +1,6 @@
 import { Box, Flex, Spacer, Heading, Input, Icon } from "@chakra-ui/react";
 import { AiFillPlusCircle } from "react-icons/ai";
-import { useEffect, VFC } from "react";
-import { fetchTasks } from "../apis/tasks";
+import { VFC } from "react";
 
 type Props = {
   color: string;
@@ -9,9 +8,9 @@ type Props = {
 };
 
 export const Lane: VFC<Props> = (props) => {
-  useEffect(() => {
-    fetchTasks().then((data) => console.log(data));
-  }, []);
+  // useEffect(() => {
+  //   fetchTasks().then((data) => console.log(data));
+  // }, []);
 
   return (
     <Box mt={{ sm: 8 }}>
