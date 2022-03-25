@@ -9,7 +9,7 @@ type Props = {
 
 export const Lane: VFC<Props> = (props) => {
   return (
-    <Box mt={{ sm: 8 }} bg="red">
+    <Box mt={{ sm: 8 }}>
       <Heading mb={4} size={"lg"} color={props.color}>
         {props.title}
       </Heading>

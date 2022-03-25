@@ -1,6 +1,5 @@
 import { useAuth0 } from "@auth0/auth0-react";
 import { Button, SimpleGrid } from "@chakra-ui/react";
-import React from "react";
 import { LANE_VALUES } from "../const/lane_values";
 import { Header } from "./Header";
 import { Lane } from "./Lane";
