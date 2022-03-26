@@ -1,6 +1,6 @@
+import { VFC } from "react";
 import { Box, Flex, Spacer, Heading, Input, Icon } from "@chakra-ui/react";
 import { AiFillPlusCircle } from "react-icons/ai";
-import { VFC } from "react";
 
 type Props = {
   color: string;
