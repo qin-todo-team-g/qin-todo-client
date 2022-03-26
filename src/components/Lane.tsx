@@ -8,6 +8,10 @@ type Props = {
 };
 
 export const Lane: VFC<Props> = (props) => {
+  // useEffect(() => {
+  //   fetchTasks().then((data) => console.log(data));
+  // }, []);
+
   return (
     <Box mt={{ sm: 8 }}>
       <Heading mb={4} size={"lg"} color={props.color}>
