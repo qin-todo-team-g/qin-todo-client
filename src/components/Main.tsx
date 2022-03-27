@@ -9,8 +9,11 @@ export const Main = () => {
   return (
     <>
       <Header />
-      <Button onClick={() => loginWithRedirect()}>ログイン</Button>
-      <Button onClick={() => logout()}>ログアウト</Button>
+      {isAuthenticated ? (
+        <Button onClick={() => logout()}>ログアウト</Button>
+      ) : (
+        <Button onClick={() => loginWithRedirect()}>ログイン</Button>
+      )}
       <SimpleGrid columns={{ base: 1, sm: 3 }} spacing={8} px="24px">
         {LANE_VALUES.map((val) => {
           return <Lane color={val.color} title={val.title} />;
