@@ -4,7 +4,8 @@ import { Button, SimpleGrid } from "@chakra-ui/react";
 import { LANE_VALUES } from "../const/lane_values";
 import { Header } from "./Header";
 import { Lane } from "./Lane";
-import axios from "axios";
+import { fetchTasks } from "../apis/tasks";
+import { fetchPublic } from "../apis/public";
 
 export const Main = () => {
   const { isAuthenticated, loginWithRedirect, logout, getAccessTokenSilently } =
@@ -23,29 +24,12 @@ export const Main = () => {
     getToken();
   }, []);
 
-  const fetchTasks = () => {
-    const headers = {
-      headers: {
-        Authorization: `Bearer ${token}`,
-        "Content-Type": "application/json",
-      },
-    };
-    console.log(`Bearer ${token}`);
-    axios
-      .get("http://localhost:3001/api/v1/tasks", headers)
-      .then((res) => {
-        return console.log(res.data);
-      })
-      .catch((e) => console.error(e));
+  const getTasks = () => {
+    fetchTasks(token).then((data) => console.log(data));
   };
 
-  const fetchPublic = () => {
-    axios
-      .get("http://localhost:3001/public")
-      .then((res) => {
-        return console.log(res.data);
-      })
-      .catch((e) => console.error(e));
+  const getPublic = () => {
+    fetchPublic().then((data) => console.log(data));
   };
 
   return (
@@ -54,8 +38,8 @@ export const Main = () => {
       {isAuthenticated ? (
         <>
           <Button onClick={() => logout()}>ログアウト</Button>
-          <Button onClick={() => fetchTasks()}>タスク一覧取得</Button>
-          <Button onClick={() => fetchPublic()}>puclic</Button>
+          <Button onClick={() => getTasks()}>タスク一覧取得</Button>
+          <Button onClick={() => getPublic()}>テストAPI(非認証)</Button>
         </>
       ) : (
         <Button onClick={() => loginWithRedirect()}>ログイン</Button>
