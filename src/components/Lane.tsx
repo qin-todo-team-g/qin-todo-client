@@ -30,6 +30,9 @@ export const Lane: VFC<Props> = (props) => {
     setTodayTodos([...TodayTodos, TodoText]);
     setTodoText("");
   };
+  // useEffect(() => {
+  //   fetchTasks().then((data) => console.log(data));
+  // }, []);
 
   return (
     <Box mt={{ sm: 8 }}>
