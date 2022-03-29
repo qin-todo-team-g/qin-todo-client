@@ -40,8 +40,8 @@ export const Lane: VFC<Props> = (props) => {
         <List>
           {TodayTodos.map((todo: string, index) => {
             return (
-              <ListItem key={index}>
-                <Checkbox colorScheme="red" checked={true}>
+              <ListItem key={index} p="2">
+                <Checkbox colorScheme="red">
                   <p>{todo}</p>
                 </Checkbox>
               </ListItem>
