@@ -12,6 +12,16 @@ const audience: string = process.env.REACT_APP_AUTH0_AUDIENCE || ''
 
 ReactDOM.render(
   <React.StrictMode>
+    {/* <ChakraProvider theme={theme}>
+        <Header />
+        <SimpleGrid columns={{base: 1, sm: 3}} spacing={8} px='24px'>
+            {LANE_VALUES.map((val) => {
+                return (
+                    <Lane color={val.color} title={val.title} key={val.title}/>
+                );
+            })}
+        </SimpleGrid>
+    </ChakraProvider> */}
     <Auth0Provider
       domain={domain}
       clientId={clientId}
