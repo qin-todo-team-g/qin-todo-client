@@ -8,6 +8,7 @@ import { Main } from "./components/Main";
 
 const domain: string = process.env.REACT_APP_AUTH0_DOMAIN || "";
 const clientId: string = process.env.REACT_APP_AUTH0_CLIENT_ID || "";
+const audience: string = process.env.REACT_APP_AUTH0_AUDIENCE || ''
 
 ReactDOM.render(
   <React.StrictMode>
@@ -24,6 +25,7 @@ ReactDOM.render(
     <Auth0Provider
       domain={domain}
       clientId={clientId}
+      audience={audience}
       redirectUri={window.location.origin}
     >
       <ChakraProvider theme={theme}>
