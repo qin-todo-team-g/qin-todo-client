@@ -44,12 +44,21 @@ export const Lane: VFC<Props> = (props) => {
   };
 
   const onSubmitTodoText = () => {
-    setTodayTodos([...TodayTodos, TodoText]);
+    // setParams((prevParams) => {
+    //   const newParams = { ...prevParams, title: TodoText };
+    //   return newParams;
+    // });
+    setParams({ ...params, title: TodoText });
+
+    createTask(params, props.token).then((data) => {
+      // setTodayTodos((prevTodayTodos) => {
+      //   const newTodayTodos = [...prevTodayTodos, data.task.title];
+      //   return newTodayTodos;
+      // });]
+      setTodayTodos([...TodayTodos, data.task.title]);
+    });
     setTodoText("");
   };
-  // useEffect(() => {
-  //   fetchTasks().then((data) => console.log(data));
-  // }, []);
 
   return (
     <Box mt={{ sm: 8 }}>
