@@ -12,15 +12,32 @@ import {
 } from "@chakra-ui/react";
 import { AiFillPlusCircle } from "react-icons/ai";
 import { VFC } from "react";
+import { createTask } from "../apis/tasks";
 
 type Props = {
   color: string;
   title: string;
+  token: string;
+};
+
+export type param = {
+  task_type: number;
+  title: string;
+  is_done: boolean;
+  user_id: number;
+};
+
+const initialState = {
+  task_type: 0,
+  title: "init",
+  is_done: false,
+  user_id: 1,
 };
 
 export const Lane: VFC<Props> = (props) => {
   const [TodoText, setTodoText] = useState<string>("");
   const [TodayTodos, setTodayTodos] = useState<string[]>([]);
+  const [params, setParams] = useState<param>(initialState);
 
   const onChangeTodoText = (e: React.ChangeEvent<HTMLInputElement>) => {
     setTodoText(e.target.value);
