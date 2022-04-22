@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Checkbox } from "@chakra-ui/react";
 import {
   Box,
@@ -27,9 +27,11 @@ export type param = {
   user_id: number;
 };
 
+type data = { [key: string]: param };
+
 const initialState = {
   task_type: 0,
-  title: "init",
+  title: "",
   is_done: false,
   user_id: 1,
 };
@@ -39,24 +41,24 @@ export const Lane: VFC<Props> = (props) => {
   const [TodayTodos, setTodayTodos] = useState<string[]>([]);
   const [params, setParams] = useState<param>(initialState);
 
+  useEffect(() => {
+    if (params.title === "") {
+      return;
+    }
+    createTask(params, props.token).then((data: data) => {
+      setTodayTodos([...TodayTodos, data.task.title]);
+    });
+  }, [params]);
+
   const onChangeTodoText = (e: React.ChangeEvent<HTMLInputElement>) => {
     setTodoText(e.target.value);
   };
 
   const onSubmitTodoText = () => {
-    // setParams((prevParams) => {
-    //   const newParams = { ...prevParams, title: TodoText };
-    //   return newParams;
-    // });
+    if (TodoText === "") {
+      return;
+    }
     setParams({ ...params, title: TodoText });
-
-    createTask(params, props.token).then((data) => {
-      // setTodayTodos((prevTodayTodos) => {
-      //   const newTodayTodos = [...prevTodayTodos, data.task.title];
-      //   return newTodayTodos;
-      // });]
-      setTodayTodos([...TodayTodos, data.task.title]);
-    });
     setTodoText("");
   };
 
