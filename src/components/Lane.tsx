@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Checkbox } from "@chakra-ui/react";
 import {
   Box,
@@ -12,27 +12,55 @@ import {
 } from "@chakra-ui/react";
 import { AiFillPlusCircle } from "react-icons/ai";
 import { VFC } from "react";
+import { createTask } from "../apis/tasks";
 
 type Props = {
   color: string;
   title: string;
+  token: string;
+};
+
+export type param = {
+  task_type: number;
+  title: string;
+  is_done: boolean;
+  user_id: number;
+};
+
+type data = { [key: string]: param };
+
+const initialState = {
+  task_type: 0,
+  title: "",
+  is_done: false,
+  user_id: 1,
 };
 
 export const Lane: VFC<Props> = (props) => {
   const [TodoText, setTodoText] = useState<string>("");
   const [TodayTodos, setTodayTodos] = useState<string[]>([]);
+  const [params, setParams] = useState<param>(initialState);
+
+  useEffect(() => {
+    if (params.title === "") {
+      return;
+    }
+    createTask(params, props.token).then((data: data) => {
+      setTodayTodos([...TodayTodos, data.task.title]);
+    });
+  }, [params]);
 
   const onChangeTodoText = (e: React.ChangeEvent<HTMLInputElement>) => {
     setTodoText(e.target.value);
   };
 
   const onSubmitTodoText = () => {
-    setTodayTodos([...TodayTodos, TodoText]);
+    if (TodoText === "") {
+      return;
+    }
+    setParams({ ...params, title: TodoText });
     setTodoText("");
   };
-  // useEffect(() => {
-  //   fetchTasks().then((data) => console.log(data));
-  // }, []);
 
   return (
     <Box mt={{ sm: 8 }}>

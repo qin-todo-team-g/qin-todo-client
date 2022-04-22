@@ -46,7 +46,7 @@ export const Main = () => {
       )}
       <SimpleGrid columns={{ base: 1, sm: 3 }} spacing={8} px="24px">
         {LANE_VALUES.map((val) => {
-          return <Lane color={val.color} title={val.title} />;
+          return <Lane color={val.color} title={val.title} token={token} />;
         })}
       </SimpleGrid>
     </>
